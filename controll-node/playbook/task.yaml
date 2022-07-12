@@ -1,0 +1,13 @@
+---
+  - name: tasks1
+    hosts: yum 
+    gather_facts: false
+    tasks: 
+    - name: ping 
+      ping: 
+  - name: tasks2
+    hosts: salt
+    gather_facts: false
+    tasks:
+    - name:  install salt
+      apt: name=salt-master
