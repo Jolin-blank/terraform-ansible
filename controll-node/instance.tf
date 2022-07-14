@@ -34,7 +34,7 @@ resource "google_compute_instance" "controll_vm_instance" {
    connection {
     type     = "ssh"
     user     = "futu"
-    private_key = file("~/.ssh/id_rsa")
+    private_key = file("../id_rsa")
     host     = self.network_interface.0.access_config.0.nat_ip
   }
 
