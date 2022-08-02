@@ -1,0 +1,13 @@
+  - hosts: all
+    gather_facts: false
+    tasks:
+    - name: mkfs
+      filesystem: 
+       fstype: ext4
+       dev: /dev/vdb
+    - name: mount
+      mount: 
+       path: /data
+       src: /dev/vdb
+       fstype: ext4
+       state: mounted
